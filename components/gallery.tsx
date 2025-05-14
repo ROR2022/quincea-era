@@ -66,7 +66,7 @@ export default function Gallery() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [currentIndex, isModalOpen])
+  }, [currentIndex, isModalOpen, goToPrevious, goToNext, closeModal])
 
   return (
     <section className="py-16 px-4 bg-white">

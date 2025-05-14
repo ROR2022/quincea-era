@@ -69,6 +69,7 @@ export default function Attendance() {
       setCompanions("")
       setPhone("")
     } catch (error) {
+      console.error(error)
       toast({
         title: "Error",
         description: "Hubo un problema al enviar tu respuesta. Intenta de nuevo.",
