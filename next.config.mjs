@@ -27,6 +27,21 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  webpack: (config, { isServer }) => {
+    // Optimizar el build para mejorar rendimiento y evitar problemas de memoria
+    config.optimization.minimize = true;
+    
+    // Reducir el tamaño del bundle
+    if (!isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        maxInitialRequests: 25,
+        minSize: 20000,
+      };
+    }
+    
+    return config;
+  },
 }
 
 if (userConfig) {
