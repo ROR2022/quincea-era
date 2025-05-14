@@ -11,7 +11,7 @@ type MusicContextType = {
 const MusicContext = createContext<MusicContextType | undefined>(undefined)
 
 export function MusicProvider({ children }: { children: ReactNode }) {
-  const [isPlaying, setIsPlaying] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(true)
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying)
