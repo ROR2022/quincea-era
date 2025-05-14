@@ -7,20 +7,16 @@ import Image from "next/image"
 
 const images = [
   {
-    src: "/images/quince1.jpeg",
+    src: "/images/joanny1.jpg",
     alt: "Quinceañera photo 1",
   },
   {
-    src: "/images/quince2.jpeg",
+    src: "/images/joanny2.jpg",
     alt: "Quinceañera photo 2",
   },
   {
-    src: "/images/quince3.jpeg",
+    src: "/images/joanny3.jpg",
     alt: "Quinceañera photo 3",
-  },
-  {
-    src: "/images/quince4.jpeg",
-    alt: "Quinceañera photo 4",
   },
 ]
 

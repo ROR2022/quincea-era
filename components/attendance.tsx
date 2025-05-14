@@ -33,20 +33,50 @@ export default function Attendance() {
 
     setIsSubmitting(true)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      // Formatear el mensaje para WhatsApp
+      const attendanceResponse = attendance === "yes" ? "¡Claro, ahí estaré!" : "Lo siento, no podré asistir."
+      
+      let message = `*Confirmación de Asistencia a Quinceañera Joanny Valeria*\n\n`
+      message += `*Nombre:* ${name}\n`
+      message += `*Respuesta:* ${attendanceResponse}\n`
+      
+      if (companions.trim()) {
+        message += `*Acompañantes:* ${companions}\n`
+      } else {
+        message += `*Acompañantes:* Ninguno\n`
+      }
+      
+      message += `*Teléfono:* ${phone}\n`
 
-    toast({
-      title: "¡Gracias!",
-      description: "Tu respuesta ha sido registrada.",
-    })
+      // Número de WhatsApp en México (agregando prefijo +52)
+      const whatsappNumber = "5217771616864" // +52 es el prefijo de México
 
-    // Reset form
-    setName("")
-    setAttendance(null)
-    setCompanions("")
-    setPhone("")
-    setIsSubmitting(false)
+      // Crear la URL de WhatsApp
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+      
+      // Abrir WhatsApp en una nueva ventana
+      window.open(whatsappUrl, "_blank")
+      
+      toast({
+        title: "¡Gracias!",
+        description: "Redireccionando a WhatsApp para confirmar tu asistencia.",
+      })
+
+      // Reset form
+      setName("")
+      setAttendance(null)
+      setCompanions("")
+      setPhone("")
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Hubo un problema al enviar tu respuesta. Intenta de nuevo.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -126,7 +156,7 @@ export default function Attendance() {
             <div className="text-center pt-4">
               <Button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary-light text-white py-6"
+                className="w-full bg-pink-500 hover:bg-pink-600 text-white py-6 font-medium shadow-md border border-pink-600 rounded-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02] focus:ring-2 focus:ring-pink-400 focus:ring-opacity-50"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "ENVIANDO..." : "ENVIAR RESPUESTA"}

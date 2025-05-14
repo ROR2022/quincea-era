@@ -1,11 +1,12 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { useInView } from "framer-motion"
+import { useRef } from "react";
+import { useInView } from "framer-motion";
+import Link from "next/link";
 
 export default function ThankYou() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <section className="py-16 px-4 bg-white">
@@ -15,24 +16,30 @@ export default function ThankYou() {
           isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <p className="text-xl mb-6">¡Gracias por ser parte de uno de los mejores días de mi vida!</p>
+        <p className="text-xl mb-6">
+          ¡Gracias por ser parte de uno de los mejores días de mi vida!
+        </p>
 
         <p className="text-lg mb-4">Con cariño:</p>
 
-        <h2 className="font-script text-primary text-5xl md:text-6xl mb-8">Joanny Valeria</h2>
+        <h2 className="font-script text-primary text-5xl md:text-6xl mb-8">
+          Joanny Valeria
+        </h2>
 
         <div className="text-sm text-gray-500 mt-12">
           <p>© 2025 JOANNY VALERIA BY ROR2022 XV ALL RIGHTS RESERVED</p>
           <p className="mt-4">¿TIENES UN EVENTO EN PUERTA?</p>
           <p>DISEÑA CON NOSOTROS TU INVITACIÓN WEB DIGITAL.</p>
-          <p className="mt-2">
-            DANDO CLICK{" "}
-            <a href="#" className="text-primary">
-              AQUÍ
-            </a>
-          </p>
+          <Link
+            href="https://wa.me/527777937484?text=Hola%2C%20vi%20la%20invitación%20de%20Joanny%20Valeria%20y%20me%20interesa%20información%20sobre%20cómo%20crear%20una%20invitación%20web%20digital%20para%20mi%20evento."
+            className="text-primary hover:text-pink-600 transition-colors font-medium underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p className="mt-2">DANDO CLICK AQUÍ</p>
+          </Link>
         </div>
       </div>
     </section>
-  )
+  );
 }

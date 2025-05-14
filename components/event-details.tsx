@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { useInView } from "framer-motion"
 import { Calendar, Clock, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function EventDetails() {
   const ref = useRef<HTMLDivElement>(null)
@@ -39,30 +40,50 @@ export default function EventDetails() {
           <div className="flex flex-col items-center">
             <Calendar className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-medium mb-2">¿Cuándo?</h3>
-            <p className="text-lg">Sábado</p>
-            <p className="text-lg">20 de Julio 2024</p>
+            <p className="text-lg">Domingo</p>
+            <p className="text-lg">8 de Julio 2025</p>
           </div>
 
           <div className="flex flex-col items-center">
             <Clock className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-medium mb-2">Ceremonia</h3>
-            <p className="text-lg">14:30 hrs.</p>
-            <p className="text-lg mt-2">Parroquia del Sagrado Corazón de Jesús</p>
-            <p className="text-sm mt-1">5 de Mayo, Centro, 64000 Monterrey, N.L.</p>
-            <Button variant="outline" className="mt-4 border-primary text-primary hover:bg-primary hover:text-white">
-              IR A MAPS
-            </Button>
+            <p className="text-lg">14:00 hrs.</p>
+            <p className="text-lg mt-2">Iglesia Señor de la Cosecha</p>
+            <p className="text-sm mt-1">Jardin Juarez, Jiutepec Morelos</p>
+            <Link 
+              href="https://maps.google.com/?q=Iglesia+Señor+de+la+Cosecha+Jardin+Juarez+Jiutepec+Morelos" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-4"
+            >
+              <Button 
+                variant="outline" 
+                className="border-primary text-primary hover:bg-pink-100 hover:text-primary hover:border-primary transition-colors shadow-sm hover:shadow"
+              >
+                IR A MAPS
+              </Button>
+            </Link>
           </div>
 
           <div className="flex flex-col items-center">
             <Clock className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-medium mb-2">Fiesta</h3>
-            <p className="text-lg">16:30 hrs.</p>
-            <p className="text-lg mt-2">La Cantera Eventos</p>
-            <p className="text-sm mt-1">Carr Nacional 2700, Valle de Cristal, 64986 Monterrey, N.L.</p>
-            <Button variant="outline" className="mt-4 border-primary text-primary hover:bg-primary hover:text-white">
-              IR A MAPS
-            </Button>
+            <p className="text-lg">15:00 hrs.</p>
+            <p className="text-lg mt-2">Salón LLuvia de Oro</p>
+            <p className="text-sm mt-1">Jardin Juarez, Jiutepec Morelos</p>
+            <Link 
+              href="https://maps.google.com/?q=Salón+LLuvia+de+Oro+Jardin+Juarez+Jiutepec+Morelos" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-4"
+            >
+              <Button 
+                variant="outline" 
+                className="border-primary text-primary hover:bg-pink-100 hover:text-primary hover:border-primary transition-colors shadow-sm hover:shadow"
+              >
+                IR A MAPS
+              </Button>
+            </Link>
           </div>
 
           <div className="flex flex-col items-center">
