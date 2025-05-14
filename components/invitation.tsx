@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { useInView } from "framer-motion"
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export default function Invitation() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <section className="py-16 px-4 bg-white">
@@ -25,7 +25,6 @@ export default function Invitation() {
         </h2>
 
         <div className="my-8">
-          
           <p className="text-primary text-2xl font-medium">MARTHA FABIOLA</p>
           <p className="text-primary text-2xl font-medium">NUÑEZ JAIMES</p>
         </div>
@@ -45,7 +44,41 @@ export default function Invitation() {
             </svg>
           </div>
         </div>
+
+        <div className="mt-10 mb-8">
+          <h3 className="text-2xl mb-6">Mis Padrinos:</h3>
+
+          <div className="space-y-6">
+            <div>
+              <p className="text-primary text-2xl font-medium">
+                JESUS ALBERTO MEDINA
+              </p>
+            </div>
+
+            <div>
+              <p className="text-primary text-2xl font-medium">
+                LUZ MARIA JAIME
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="divider">
+          <div className="divider-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }

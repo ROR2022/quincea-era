@@ -90,7 +90,7 @@ export default function Attendance() {
       >
         <h2 className="section-title">ASISTENCIA</h2>
 
-        <div className="mt-4 mb-8 text-center">
+        <div className="mt-4 mb-8 text-center" style={{ display: 'none'}}>
           <p className="text-lg">Respetuosamente</p>
           <p className="text-lg font-medium my-2">&lt;No Niños&gt;</p>
           <p className="text-lg">Espero que no sea impedimento para que ustedes puedan asistir a mi fiesta.</p>
