@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import MusicButton from "@/components/music-button";
 
 export default function Invitation() {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,6 +28,13 @@ export default function Invitation() {
         <div className="my-8">
           <p className="text-primary text-2xl font-medium">MARTHA FABIOLA</p>
           <p className="text-primary text-2xl font-medium">NUÑEZ JAIMES</p>
+        </div>
+        
+        
+        
+        <div className="mt-4 mb-8">
+          <MusicButton />
+          <p className="text-xs text-gray-500 mt-2">Música de fondo</p>
         </div>
 
         <div className="divider">

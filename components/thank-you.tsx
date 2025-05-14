@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import Link from "next/link";
+import MusicButton from "./music-button";
 
 export default function ThankYou() {
   const ref = useRef<HTMLDivElement>(null);
@@ -25,6 +26,11 @@ export default function ThankYou() {
         <h2 className="font-script text-primary text-5xl md:text-6xl mb-8">
           Joanny Valeria
         </h2>
+
+        <div className="mt-4 mb-8">
+          <MusicButton />
+          <p className="text-xs text-gray-500 mt-2">Música de fondo</p>
+        </div>
 
         <div className="text-sm text-gray-500 mt-12">
           <p>© 2025 JOANNY VALERIA BY ROR2022 XV ALL RIGHTS RESERVED</p>
