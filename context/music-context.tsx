@@ -6,18 +6,33 @@ type MusicContextType = {
   isPlaying: boolean
   setIsPlaying: (isPlaying: boolean) => void
   togglePlay: () => void
+  userHasInteracted: boolean
+  setUserHasInteracted: (hasInteracted: boolean) => void
 }
 
 const MusicContext = createContext<MusicContextType | undefined>(undefined)
 
 export function MusicProvider({ children }: { children: ReactNode }) {
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [userHasInteracted, setUserHasInteracted] = useState(false)
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying)
   }
 
-  return <MusicContext.Provider value={{ isPlaying, setIsPlaying, togglePlay }}>{children}</MusicContext.Provider>
+  return (
+    <MusicContext.Provider 
+      value={{ 
+        isPlaying, 
+        setIsPlaying, 
+        togglePlay, 
+        userHasInteracted, 
+        setUserHasInteracted 
+      }}
+    >
+      {children}
+    </MusicContext.Provider>
+  )
 }
 
 export function useMusicContext() {
