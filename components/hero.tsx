@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const { isPlaying, togglePlay } = useMusicContext()
+  const { isPlaying, togglePlay, setUserHasInteracted } = useMusicContext()
 
   useEffect(() => {
     setIsLoaded(true)
@@ -17,6 +17,7 @@ export default function Hero() {
     <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
+        onClick={() => setUserHasInteracted(true)}
         style={{
           backgroundImage: "url('/images/joanny3.jpg')",
           filter: "brightness(0.7)",
