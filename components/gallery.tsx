@@ -18,6 +18,18 @@ const images = [
     src: "/images/joanny3.jpg",
     alt: "Quinceañera photo 3",
   },
+  {
+    src: "/images/joanny4.jpg",
+    alt: "Quinceañera photo 4",
+  },
+  {
+    src: "/images/joanny5.jpg",
+    alt: "Quinceañera photo 5",
+  },
+  {
+    src: "/images/joanny6.jpg",
+    alt: "Quinceañera photo 6",
+  }
 ]
 
 export default function Gallery() {
