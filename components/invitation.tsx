@@ -54,20 +54,16 @@ export default function Invitation() {
         </div>
 
         <div className="mt-10 mb-8">
-          <h3 className="text-2xl mb-6">Mis Padrinos:</h3>
+          <h3 className="text-2xl mb-6">Mi Madrina:</h3>
 
           <div className="space-y-6">
             <div>
               <p className="text-primary text-2xl font-medium">
-                JESUS ALBERTO MEDINA
+                JOAQUINA REYES SANDOVAL
               </p>
             </div>
 
-            <div>
-              <p className="text-primary text-2xl font-medium">
-                LUZ MARIA JAIME
-              </p>
-            </div>
+            
           </div>
         </div>
 
