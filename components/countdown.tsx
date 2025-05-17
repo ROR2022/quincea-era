@@ -22,7 +22,7 @@ export default function Countdown() {
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   // Set your event date here
-  const eventDate = new Date("July 8, 2025 14:00:00").getTime()
+  const eventDate = new Date("June 8, 2025 14:00:00").getTime()
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -41,7 +41,7 @@ export default function EventDetails() {
             <Calendar className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-medium mb-2">¿Cuándo?</h3>
             <p className="text-lg">Domingo</p>
-            <p className="text-lg">8 de Julio 2025</p>
+            <p className="text-lg">8 de Junio 2025</p>
           </div>
 
           <div className="flex flex-col items-center">
