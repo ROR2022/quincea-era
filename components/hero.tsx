@@ -19,7 +19,7 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center z-0"
         onClick={() => setUserHasInteracted(true)}
         style={{
-          backgroundImage: "url('/images/joanny3.jpg')",
+          backgroundImage: "url('/images/joanny9.jpg')",
           filter: "brightness(0.7)",
         }}
       />

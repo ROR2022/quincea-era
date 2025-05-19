@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useRef, useEffect } from "react"
-import { useInView } from "framer-motion"
-import { ChevronLeft, ChevronRight, X } from "lucide-react"
-import Image from "next/image"
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "framer-motion";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import Image from "next/image";
 
 const images = [
   {
@@ -29,56 +29,68 @@ const images = [
   {
     src: "/images/joanny6.jpg",
     alt: "Quinceañera photo 6",
-  }
-]
+  },
+  {
+    src: "/images/joanny7.jpg",
+    alt: "Quinceañera photo 7",
+  },
+  {
+    src: "/images/joanny8.jpg",
+    alt: "Quinceañera photo 8",
+  },
+  {
+    src: "/images/joanny9.jpg",
+    alt: "Quinceañera photo 9",
+  },
+];
 
 export default function Gallery() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0
-    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1
-    setCurrentIndex(newIndex)
-  }
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
 
   const goToNext = () => {
-    const isLastSlide = currentIndex === images.length - 1
-    const newIndex = isLastSlide ? 0 : currentIndex + 1
-    setCurrentIndex(newIndex)
-  }
+    const isLastSlide = currentIndex === images.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
 
   const goToSlide = (slideIndex: number) => {
-    setCurrentIndex(slideIndex)
-  }
+    setCurrentIndex(slideIndex);
+  };
 
   const openModal = () => {
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-  }
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
-        goToPrevious()
-      } else if (e.key === 'ArrowRight') {
-        goToNext()
-      } else if (e.key === 'Escape' && isModalOpen) {
-        closeModal()
+      if (e.key === "ArrowLeft") {
+        goToPrevious();
+      } else if (e.key === "ArrowRight") {
+        goToNext();
+      } else if (e.key === "Escape" && isModalOpen) {
+        closeModal();
       }
-    }
+    };
 
-    window.addEventListener('keydown', handleKeyDown)
-    
+    window.addEventListener("keydown", handleKeyDown);
+
     return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [currentIndex, isModalOpen, goToPrevious, goToNext, closeModal])
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [currentIndex, isModalOpen, goToPrevious, goToNext, closeModal]);
 
   return (
     <section className="py-16 px-4 bg-white">
@@ -117,7 +129,12 @@ export default function Gallery() {
                   }`}
                   onClick={openModal}
                 >
-                  <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill className="object-cover cursor-pointer" />
+                  <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    fill
+                    className="object-cover cursor-pointer"
+                  />
                 </div>
               ))}
             </div>
@@ -155,22 +172,22 @@ export default function Gallery() {
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
           <div className="relative w-full max-w-5xl h-[80vh]">
-            <button 
-              onClick={closeModal} 
+            <button
+              onClick={closeModal}
               className="absolute right-2 top-2 bg-pink-500 text-white p-2 rounded-full z-20 hover:bg-pink-600 transition-colors"
             >
               <X size={24} />
             </button>
-            
+
             <div className="relative w-full h-full">
-              <Image 
-                src={images[currentIndex].src || "/placeholder.svg"} 
-                alt={images[currentIndex].alt} 
-                fill 
+              <Image
+                src={images[currentIndex].src || "/placeholder.svg"}
+                alt={images[currentIndex].alt}
+                fill
                 className="object-contain"
               />
             </div>
-            
+
             <button
               onClick={goToPrevious}
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-pink-500 text-white p-3 rounded-full shadow-md hover:bg-pink-600 transition-colors z-10"
@@ -184,7 +201,7 @@ export default function Gallery() {
             >
               <ChevronRight size={30} />
             </button>
-            
+
             <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
               {images.map((_, index) => (
                 <button
@@ -200,5 +217,5 @@ export default function Gallery() {
         </div>
       )}
     </section>
-  )
+  );
 }
