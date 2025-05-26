@@ -22,12 +22,17 @@ export default function Invitation() {
           <span className="text-3xl md:text-4xl font-medium">Mis XV años</span>
           <br />
           con la bendición de Dios
-          <br />y mi madre:
+          <br />y mis padres:
         </h2>
 
         <div className="my-8">
           <p className="text-primary text-2xl font-medium">MARTHA FABIOLA</p>
           <p className="text-primary text-2xl font-medium">NUÑEZ JAIMES</p>
+        </div>
+
+        <div className="my-8">
+          <p className="text-primary text-2xl font-medium">GIOVANNI MISAEL</p>
+          <p className="text-primary text-2xl font-medium">ALVARADO MARTINEZ</p>
         </div>
         
         
