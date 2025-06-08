@@ -42,6 +42,10 @@ const images = [
     src: "/images/joanny9.jpg",
     alt: "Quinceañera photo 9",
   },
+  {
+    src: "/images/joanny10.jpg",
+    alt: "Quinceañera photo 10",
+  } 
 ];
 
 export default function Gallery() {
